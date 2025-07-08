@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>勤怠ビュー</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f0f8ff; }
+    table { border-collapse: collapse; width: 100%; background: #fff; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background: #e0f7fa; }
+  </style>
+</head>
+<body>
+  <h2>📋 勤怠状況（読み取り専用）</h2>
+  <table>
+    <tr>
+      <th>社員名</th>
+      <th>日付</th>
+      <th>区分</th>
+      <th>状態</th>
+      <th>場所</th>
+    </tr>
+    {% for rec in records %}
+    <tr>
+      <td>{{ rec.employee }}</td>
+      <td>{{ rec.date }}</td>
+      <td>{{ rec.part }}</td>
+      <td>{{ rec.status }}</td>
+      <td>{{ rec.location }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
